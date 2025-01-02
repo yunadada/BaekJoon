@@ -10,3 +10,7 @@ def LCM(a, b):
 
 result = reduce(LCM, Thickness)
 print(result)
+
+# 더 효율적인 풀이
+# import math
+# print(math.lcm(*map(int,[*open(0)][1].split()))*2)
