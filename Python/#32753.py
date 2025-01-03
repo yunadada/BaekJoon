@@ -3,8 +3,7 @@ if(N == 1):
     for i in range(K):
         print('1', end=" ")
 elif (N == 2 and K == 1):
-    for i in range(1, N+1):
-        print(i, end =" ")
+    print('1 2')
 else:
     print('-1')
 
