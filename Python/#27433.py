@@ -8,3 +8,5 @@ def Factorial(num):
     
 result = Factorial(N)
 print(result)
+
+# num이 1이거나 0일 때 1을 출력해도 되지만, 0일 때만 1을 출력하도록해도 만족됨.
