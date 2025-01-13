@@ -42,9 +42,6 @@ while(len(result) != LEN):
             else:
                 print('Sad')
                 sys.exit(0)
-        else: #둘 다 비어있는 경우
-            print('Sad')
-            sys.exit(0)
     # print(f'현재 num_Line= {num_Line}, wait= {wait}, result= {result}')
 # print(f'최종 num_Line= {num_Line}, wait= {wait}, result= {result}')
 print('Nice')
