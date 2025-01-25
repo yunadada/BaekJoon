@@ -62,4 +62,55 @@ while (True):
             game_board[ROW - 1][COL - 1] = 0
         else:
             snack.append([ROW, COL])
-            snack.popleft()    
+            snack.popleft()  
+
+# 더 효율적인 풀이
+import sys
+input = sys.stdin.readline
+
+n = int(input())
+board = [[0] * n for _ in range(n)]
+
+k = int(input())
+for _ in range(k):
+    a, b = map(int, input().split())
+    board[a - 1][b - 1] = 2
+
+l = int(input())
+move = {}
+for _ in range(l):
+    a, b = input().split()
+    move[int(a)] = b
+
+def solution(n, board, move):
+    time = 0
+    dx = [0, 1, 0, -1]
+    dy = [1, 0, -1, 0]
+    snake = [[0, 0]]
+    x, y, d = 0, 0, 0
+    while True:
+        time = time + 1
+        nx = x + dx[d]
+        ny = y + dy[d]
+        
+        if nx < 0 or nx >= n or ny < 0 or ny >= n: 
+            break
+        if [nx, ny] in snake: 
+            break
+        
+        x, y = nx, ny
+        snake.append([x, y])
+        
+        if board[x][y] == 2:
+            board[x][y] = 0
+        else:
+            snake.pop(0)
+        
+        if time in move:
+            if move[time] == 'D':
+                d = (d + 1) % 4
+            else:
+                d = (d - 1) % 4
+    return time
+
+print(solution(n, board, move))
